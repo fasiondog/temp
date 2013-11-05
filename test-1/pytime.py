@@ -1,6 +1,7 @@
 import time
 import subprocess
 
+#注意关闭编译器优化选项
 subprocess.call(['cl', 'test.cpp'])
 
 def test_func():

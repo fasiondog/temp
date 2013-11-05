@@ -209,7 +209,7 @@ T func(int n) {
 	return result;
 }
 
-
+//编译时，注意关闭编译器优化
 int main() {
     unsigned long long t1=0, t2=0;
     int max = 20000;
