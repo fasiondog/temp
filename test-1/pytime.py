@@ -4,13 +4,19 @@
 
 import time
 import subprocess
+import sys
 
 #注意关闭编译器优化选项
-subprocess.call(['cl', 'test.cpp'])
+if sys.platform == 'win32':
+    subprocess.call(['cl', 'test.cpp'])
+    exe_file = 'test.exe'
+else:
+    subprocess.call(['g++', '-O0', '-std=c++11', '-o', 'test', 'test.cpp'])
+    exe_file = './test'
 
 def test_func():
 	starttime = time.time()
-	subprocess.call(['test.exe'])
+	subprocess.call([exe_file])
 	endtime = time.time()
 	return (endtime - starttime)
 	

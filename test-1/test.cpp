@@ -141,18 +141,6 @@ public:
         x._plist = 0;
     }
 	
-	D& operator=(const D& x) {
-		std::cout << "D& operator=(const D& x)" << std::endl;
-		if (this == &x)
-			return *this;
-			
-        _plist = new std::vector<int>;
-        _plist->reserve(x.size());
-        for (int i = 0; i < x.size(); ++i) {
-            _plist->push_back(x[i]);
-        } 
-	}
-
     virtual ~D() { delete _plist; }
 
     size_t size() const { return _plist->size(); }
@@ -218,9 +206,9 @@ int main() {
         //A a = func<A>(i);
 		//A1 a = func<A1>(i);
         //B a = func<B>(i);
-        C a = func<C>(i);
+        //C a = func<C>(i);
         //D a = func<D>(i);
-        //E a = func<E>(i);
+        E a = func<E>(i);
         for (int j = 1; j < a.size(); ++j) {
             t1 += a[j];
         }
