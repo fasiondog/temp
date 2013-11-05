@@ -1,3 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf8 -*-
+# cp936
+
 import time
 import subprocess
 
