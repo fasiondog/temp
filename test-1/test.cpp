@@ -191,16 +191,17 @@ private:
 template <class T>
 T func(int n) {
 	T result(n);
-	if (n < 1) {
+	if (n <= 1) { //此处只用<，会被msvc优化掉
+		//std::cout << "T Func" << std::endl;
 		return T(1);
 	}
 	return result;
 }
 
-///编译时，注意关闭编译器优化
+///编译时，需注意编译器优化NRO
 int main() {
     unsigned long long t1=0, t2=0;
-    int max = 20000;
+    int max = 50000;
     
     for (int i = 1; i < max; ++i) {
         //A a = func<A>(i);

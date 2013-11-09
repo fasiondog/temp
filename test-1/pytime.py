@@ -8,7 +8,7 @@ import sys
 
 #注意关闭编译器优化选项
 if sys.platform == 'win32':
-    subprocess.call(['cl', 'test.cpp'])
+    subprocess.call(['cl', '/O2', 'test.cpp'])
     exe_file = 'test.exe'
 else:
     subprocess.call(['g++', '-O0', '-std=c++11', '-o', 'test', 'test.cpp'])
